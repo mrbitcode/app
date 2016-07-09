@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>黄金屋</title>
+    <style>
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            outline: 0;
+            border: 0;
+            background: transparent;
+            vertical-align: baseline;
+            font-size: 100%;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        i, b, em {
+            font-style: normal;
+        }
+
+        body {
+            color: #333;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0px;
+            font-family: NotoSansHans-Regular, AvenirNext-Regular, "proxima-nova", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Open Sans", "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .MainHeader {
+            border-top: 2px solid #eee;
+            border-bottom: 1px solid #eee;
+            background-color: #fdfdfd;
+            padding: 10px 0 6px;
+        }
+
+            .MainHeader .title {
+                margin: auto;
+                padding: 15px 0;
+                text-align: center;
+            }
+
+                .MainHeader .title h1 {
+                    color: #666;
+                    font-size: 22px;
+                    padding-bottom: 10px;
+                }
+
+                .MainHeader .title p {
+                    color: #555;
+                }
+
+                    .MainHeader .title p > span + span::before {
+                        content: "/";
+                        color: #CCC;
+                        padding: 0px 10px;
+                    }
+
+        .MainContent {
+            max-width: 500px;
+            margin: auto;
+            margin-top: 30px;
+            padding: 20px;
+        }
+
+            .MainContent .ImgIcon {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+                .MainContent .ImgIcon img {
+                    border-radius: 24px;
+                }
+
+            .MainContent .spinner {
+                text-align: center;
+                height: 45px;
+                margin-bottom: 20px;
+            }
+
+                .MainContent .spinner .install {
+                    font-size: 18px;
+                    padding: 10px 26px;
+                    background-color: #56BC94;
+                    color: white;
+                    text-decoration: none;
+                }
+
+                    .MainContent .spinner .install:hover {
+                        background-color: #27ae60;
+                    }
+
+                    .MainContent .spinner .install .fa {
+                        display: inline-block;
+                        font: normal normal normal 14px/1 FontAwesome;
+                        font-size: inherit;
+                        text-rendering: auto;
+                    }
+
+                        .MainContent .spinner .install .fa::before {
+                            content: "";
+                        }
+
+            .MainContent .prompt {
+                text-align: center;
+                font-size: 11px;
+            }
+
+                .MainContent .prompt .sp01 {
+                    padding: 4px 7px;
+                    background-color: #5BC0DE;
+                    border-radius: .25em;
+                    color: white;
+                }
+
+                .MainContent .prompt .sp02 {
+                    padding: 4px 7px;
+                    background-color: #D9534F;
+                    border-radius: .25em;
+                    color: white;
+                    margin-left: 2px;
+                }
+
+            .MainContent .password {
+                width: 100%;
+                height: 34px;
+                color: #555;
+                background-color: white;
+                border: 1px solid #CCC;
+                border-radius: 4px;
+                text-align: center;
+                margin-bottom: 30px;
+                box-shadow: none;
+            }
+
+            .MainContent .button {
+                background-color: #2ECC71;
+                border: 0px;
+                cursor: pointer;
+                color: #fff;
+                padding: 8px 15px;
+            }
+
+                .MainContent .button:hover {
+                    background-color: #27ae60;
+                }
+
+        .devider {
+            border-top: 2px dotted #EEE;
+            margin: 30px auto;
+            border: 1px dashed #eee;
+            max-width: 800px;
+        }
+
+        .MainView {
+            margin-bottom: 30px;
+        }
+
+        .click_opacity {
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: 0.6;
+            position: fixed;
+            z-index: 10000;
+            top: 0px;
+        }
+
+        .to_btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            text-align: right;
+            z-index: 10001;
+            font-family: "微软雅黑";
+            color: white;
+        }
+
+            .to_btn .span1 {
+                font-size: 1.6rem;
+                color: white;
+                margin-top: 5px;
+            }
+
+            .to_btn img {
+                width: 20%;
+                height: auto;
+                display: inline-block;
+            }
+
+            .to_btn .span2 {
+                display: inline-block;
+                line-height: 36px;
+                width: 80%;
+                margin-bottom: 12px;
+                text-align: left;
+                font-size: 16px;
+            }
+
+            .to_btn span {
+                display: block;
+                float: right;
+            }
+
+            .to_btn .span2 em {
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                background: #009DD9;
+                color: white;
+                font-size: 12px;
+                text-align: center;
+                line-height: 16px;
+                border: 1px solid white;
+                border-radius: 50%;
+                margin-right: 3px;
+            }
+
+            .to_btn .span2 img {
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                margin: 0px 5px;
+            }
+
+            .to_btn .android_open img {
+                display: inline-block;
+                width: 150px;
+                height: 34px;
+            }
+    </style>
+    <script type="text/javascript">
+        document.onload = function () {
+            var cpassword = getCookie('cpassword')
+            if (cpassword == null || cpassword == "") {
+                alert("非法请求！");
+                document.getElementById("down_load").href = "javascript:void(0);"
+                if (document.getElementById("promptBak").href == "#") {
+                    document.getElementById("promptBak").href
+                }
+            }
+        }
+
+        function getCookie(c_name) {
+            if (document.cookie.length > 0) {
+                c_start = document.cookie.indexOf(c_name + "=")
+                if (c_start != -1) {
+                    c_start = c_start + c_name.length + 1
+                    c_end = document.cookie.indexOf(";", c_start)
+                    if (c_end == -1) c_end = document.cookie.length
+                    return unescape(document.cookie.substring(c_start, c_end))
+                }
+            }
+            return "";
+        }
+    </script>
+</head>
+<body>
+    <div class="MainHeader">
+        <div class="title">
+            <h1>黄金屋</h1>
+            <p><span>版本：3.3.4.0</span><span>大小：39.75 MB</span><span>2016/6/12 17:22:56</span></p>
+        </div>
+    </div>
+
+    <div class="MainContent">
+        <div class="ImgIcon">
+            <img src="app.png" class="appicon" onerror="javascript:this.src='http://o1wjx1evz.qnssl.com/static-20160303/assets/img/default-icon.png';;this.height=120;this.width=120;">
+        </div>
+        <div class="spinner">
+            <a title="黄金屋" href="itms-services://?action=download-manifest&url=https://o4a0pfciz.qnssl.com/download/HuangJinWu/979065318.plist" id="down_load" class="install"><i class="fa fa-download"></i> 点击安装</a>
+        </div>
+        <div class="prompt">
+            <span class="sp01">适用于iOS设备</span><span class="sp02">企业版</span>
+        </div>
+        <br />
+        <div class="spinner" id="promptBak">友情提示：当前下载安装失败请点击<br /><br/><a class="install" id="bakDown" href="javascript:return void(0);">备用下载</a></div>
+
+</div>
+<script type="text/javascript">
+    if (document.getElementById("bakDown").href == "javascript:return void(0);") {
+        document.getElementById("promptBak").style.display = "none";
+    }
+    document.getElementById("down_load").onclick = function () {
+        document.getElementById("down_load").innerText = "下载中请稍候...";
+        setTimeout(resetDownLoad, 30000);
+    };
+    function resetDownLoad() {
+        document.getElementById("down_load").innerHTML = "<i class=\"fa fa-download\"></i> 请到主屏幕查看安装进度</a>";
+        //document.getElementById("down_load").href = "itms-services://?action=download-manifest&url=https://o4a0pfciz.qnssl.com/download/HuangJinWu/979065318.plist";
+    }
+</script>
+</body>
+</html>
